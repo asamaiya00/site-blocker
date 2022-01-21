@@ -25,35 +25,20 @@ const imgs = [
 
 const generateHTML = () => {
   const randomIdx = Math.floor(Math.random() * imgs.length);
-
+  const url = window.location.host.split(".");
+  const name = url.length === 2 ? url[0] : url[1];
+  //   console.log(name);
   return `
     <div id="parent">
-
+        <h1>${name} is blocked. Here's a meme </h1>
     <img src="${imgs[randomIdx]}" alt="This site is blocked."></img>
     </div>
     `;
 };
 
-const loadCSS = () => {
-  return `
-        <style>
-            body{
-                margin:0;
-            }
-            #parent{
-                height: 100vh;
-                width: 100vw;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
-    `;
-};
 toBlock.forEach((site) => {
   if (window.location.href.includes(site)) {
-    console.log("site", site, "is blocked");
+    console.log("site ", site, " is to be blocked");
     document.body.innerHTML = generateHTML();
-    document.head.innerHTML = loadCSS();
   }
 });
