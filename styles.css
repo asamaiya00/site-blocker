@@ -10,3 +10,15 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+textarea {
+  resize: none;
+}
+
+form {
+  margin: 10px;
+}
+
+#submit {
+  width: 100%;
+}

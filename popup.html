@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Site Blocker</title>
   </head>
   <body>
     <form>
-      <h4 for="site">Enter site to block</h4>
-      <input type="text" name="site" id="site" />
+      <h3>Enter sites to block (each on new line)</h3>
+      <textarea id="sites" rows="10" cols="35" spellcheck="false"></textarea>
+      <input type="submit" value="Save" id="submit" />
     </form>
     <script src="popup.js"></script>
   </body>

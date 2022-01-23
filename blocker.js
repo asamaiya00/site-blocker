@@ -1,9 +1,3 @@
-const toBlock = [
-  "netflix.com",
-  "facebook.com",
-  "primevideo.com",
-  "instagram.com",
-];
 const imgs = [
   "https://sayingimages.com/wp-content/uploads/back-to-work-break-over-now-meme.jpg",
   "https://sayingimages.com/wp-content/uploads/enough-goofing-back-to-work-meme.jpg",
@@ -30,15 +24,21 @@ const generateHTML = () => {
   //   console.log(name);
   return `
     <div id="parent">
-        <h1>${name} is blocked. Here's a meme </h1>
+        <h1 style="font-size: 2rem;color: black;">${name} is blocked. Here's a meme </h1>
     <img src="${imgs[randomIdx]}" alt="This site is blocked."></img>
     </div>
     `;
 };
 
-toBlock.forEach((site) => {
-  if (window.location.href.includes(site)) {
-    console.log("site ", site, " is to be blocked");
-    document.body.innerHTML = generateHTML();
-  }
-});
+setTimeout(checkSites, 0);
+function checkSites() {
+  chrome.storage.sync.get(["sites"], (res) => {
+    res.sites.forEach((site) => {
+      if (window.location.host.includes(site)) {
+        console.log("site ", site, " is to be blocked from blocker");
+        document.body.innerHTML = generateHTML();
+        return;
+      }
+    });
+  });
+}

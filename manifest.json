@@ -1,7 +1,7 @@
 {
   "name": "Site Blocker",
   "description": "Block distracting websites",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "version": "0.1.0",
   "content_scripts": [
     {
@@ -10,11 +10,11 @@
       "css": ["styles.css"]
     }
   ],
-  "action": {
+  "browser_action": {
     "default_popup": "popup.html"
   },
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["background.js"]
   },
-  "permissions": ["tabs"]
+  "permissions": ["storage", "tabs", "webRequest", "webRequestBlocking"]
 }
