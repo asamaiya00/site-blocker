@@ -12,12 +12,11 @@ submitEl.addEventListener("click", (e) => {
     chrome.tabs.query(
       { active: true, currentWindow: true },
       function (arrayOfTabs) {
+        console.log("arrayOfTabs[0].url", arrayOfTabs[0].url.split("."));
         sites.forEach((site) => {
-          if (arrayOfTabs[0].url.includes(site)) {
-            console.log("site ", site, " is to be blocked from popup");
-            chrome.tabs.reload(arrayOfTabs[0].id);
-            return;
-          }
+          if (!arrayOfTabs[0].url.includes(site)) return;
+          console.log("site ", site, " is to be blocked from popup");
+          chrome.tabs.reload(arrayOfTabs[0].id);
         });
       }
     );

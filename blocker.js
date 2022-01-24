@@ -5,15 +5,17 @@ const imgs = [
   "https://media.makeameme.org/created/if-you-could-gwn8nh.jpg",
   "https://sayingimages.com/wp-content/uploads/the-best-things-back-to-work-meme.jpg",
   "https://sayingimages.com/wp-content/uploads/we-must-back-to-work-meme.png",
+  "https://i.shgcdn.com/e19defd3-1348-44dc-8794-c85656653cc1/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
   "https://sayingimages.com/wp-content/uploads/back-to-work-reading-meme.jpg",
   "https://sayingimages.com/wp-content/uploads/back-to-work-thinking-meme.jpg",
-  //   "http://www.quickmeme.com/img/81/81f6f5ae89e3413563665047c6b934ada835ff9aa6eb99cbabb16128e6fda018.jpg",
-  "https://sayingimages.com/wp-content/uploads/heres-an-idea-get-back-to-work-meme.jpg",
   "https://sayingimages.com/wp-content/uploads/get-back-to-work-cat-meme.jpg",
-  "https://sayingimages.com/wp-content/uploads/im-sorry-youre-tired-get-back-to-work-meme.jpg",
+  "https://winkgo.com/wp-content/uploads/2018/10/21-Back-To-Work-Memes-OutroB.gif",
+  "https://sayingimages.com/wp-content/uploads/heres-an-idea-get-back-to-work-meme.jpg",
   "https://sayingimages.com/wp-content/uploads/just-kidding-get-back-to-work-meme.png",
   "https://sayingimages.com/wp-content/uploads/stop-daydreaming-get-back-to-work-meme.jpg",
+  "https://i.shgcdn.com/828ce242-960c-4e44-bc31-556240194665/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
   "https://sayingimages.com/wp-content/uploads/conratulations-get-back-to-work-meme.jpg",
+  "https://sayingimages.com/wp-content/uploads/im-sorry-youre-tired-get-back-to-work-meme.jpg",
   "https://sayingimages.com/wp-content/uploads/about-to-leave-work-memes.jpg",
 ];
 
@@ -21,7 +23,6 @@ const generateHTML = () => {
   const randomIdx = Math.floor(Math.random() * imgs.length);
   const url = window.location.host.split(".");
   const name = url.length === 2 ? url[0] : url[1];
-  //   console.log(name);
   return `
     <div id="parent">
         <h1 style="font-size: 2rem;color: black;">${name} is blocked. Here's a meme </h1>

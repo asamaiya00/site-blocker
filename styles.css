@@ -13,6 +13,8 @@ body {
 
 textarea {
   resize: none;
+  font-size: large;
+  line-height: 1.5rem;
 }
 
 form {
@@ -20,5 +22,13 @@ form {
 }
 
 #submit {
+  font-size: large;
+  cursor: pointer;
+  height: 2rem;
   width: 100%;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: #70b134;
+  margin-block: 0.5rem;
 }
